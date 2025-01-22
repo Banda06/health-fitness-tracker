@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const express = require('express');
+=======
+t express = require('express');
+>>>>>>> 2c0780159a1a2db35d2838dacde391d8cdba14ef
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
@@ -8,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+<<<<<<< HEAD
 app.use(express.json());
 
 // MongoDB Connection
@@ -38,3 +43,46 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+=======
+// app.use(express.json());
+//
+// // MongoDB Connection
+// (async () => {
+//     try {
+//             await mongoose.connect(process.env.MONGO_URI, {
+//                         useNewUrlParser: true,
+//                                     useUnifiedTopology: true,
+//                                             });
+//                                                     console.log('MongoDB connected');
+//                                                         } catch (err) {
+//                                                                 console.error('MongoDB connection error:', err);
+//                                                                         process.exit(1); // Exit process with failure
+//                                                                             }
+//                                                                             })();
+//
+//                                                                             // Routes
+//                                                                             app.use('/api/users', userRoutes);
+//
+//                                                                             // Error Handling Middleware
+//                                                                             app.use((err, req, res, next) => {
+//                                                                                 console.error(err.stack);
+//                                                                                     res.status(err.status || 500).json({
+//                                                                                             message: err.message || 'Internal Server Error',
+//                                                                                                 });
+//                                                                                                 });
+//
+//                                                                                                 app.listen(PORT, () => {
+//                                                                                                     console.log(`Server running on port ${PORT}`);
+//                                                                                                     });
+//
+//                                                                                                     // Directory: backend/routes
+//                                                                                                     // File: userRoutes.js
+//                                                                                                     const express = require('express');
+//                                                                                                     const router = express.Router();
+//                                                                                                     const { registerUser, loginUser } = require('../controllers/userController');
+//
+//                                                                                                     router.post('/register', registerUser);
+//                                                                                                     router.post('/login', loginUser);
+//
+//                                                                                                     module.exports = router;
+>>>>>>> 2c0780159a1a2db35d2838dacde391d8cdba14ef
