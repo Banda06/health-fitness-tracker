@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../assets/images/logo192.png'; // Update the path if necessary
+import Header from './components/Header';
+import logo from '../assets/images/logo192.png'; //  path to logo image
 
 function Header() {
 	    return (
