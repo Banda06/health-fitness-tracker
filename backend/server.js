@@ -19,7 +19,9 @@ app.use(express.json()); // Parse incoming JSON requests
 		});
 		console.log('MongoDB connected successfully');
 	} catch (err) {
+		
 		console.error('MongoDB connection error:', err);
+		
 		process.exit(1); // Exit the application with a failure code
 	}
 })();
