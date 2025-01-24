@@ -7,26 +7,25 @@ dotenv.config(); // Load environment variables
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+Middleware
 app.use(express.json()); // Parse incoming JSON requests
 
 // MongoDB Connection
 (async () => {
 	try {
-		await mongoose.connect(process.env.MONGO_URI, {
+		await mongoose.connect(process.env.MONGODB_URI, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
 		console.log('MongoDB connected successfully');
 	} catch (err) {
-		
 		console.error('MongoDB connection error:', err);
-		
 		process.exit(1); // Exit the application with a failure code
 	}
 })();
 
 // Routes
+
 app.use('/api/users', userRoutes); // Route for user-related operations
 
 // Error Handling Middleware
@@ -37,7 +36,10 @@ app.use((err, req, res, next) => {
 	});
 });
 
-// Start the Server
-app.listen(PORT, () => {
-	console.log(`Server running on http://localhost:${PORT}`);
-});
+// Start the Server (only if not in test environment)
+if (process.env.NODE_ENV !== 'test') {
+	app.listen(PORT, () => {
+		console.log(`Server running on http://localhost:${PORT}`);
+	});
+}
+module.exports = app; // Export the app for testing
