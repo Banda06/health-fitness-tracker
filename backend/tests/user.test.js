@@ -1,6 +1,6 @@
 import request from 'supertest';
-const mongoose from 'mongoose';
-const app from '../server';
+import mongoose from 'mongoose';
+import app from '../server';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: '.env.test' }); // Load test environment variables
