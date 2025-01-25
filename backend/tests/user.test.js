@@ -1,7 +1,7 @@
-const request = require('supertest');
-const mongoose = require('mongoose');
-const app = require('../server');
-const dotenv = require('dotenv');
+import request from 'supertest';
+const mongoose from 'mongoose';
+const app from '../server';
+import dotenv from 'dotenv';
 
 dotenv.config({ path: '.env.test' }); // Load test environment variables
 
